@@ -27,4 +27,6 @@ int main(void) {
             iCounter--;
         }
     }
+    
+    return 0;
 }
