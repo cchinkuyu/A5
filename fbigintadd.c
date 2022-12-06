@@ -50,7 +50,7 @@ int BigInt_add(BigInt_T oAddend1, BigInt_T oAddend2, BigInt_T oSum)
     lSumLength = BigInt_larger(oAddend1->lLength, oAddend2->lLength);
 
     /* Clear oSum's array if necessary. */
-    if (oSum->lLength <= lSumLength) goto endif2
+    if (oSum->lLength <= lSumLength) goto endif2;
     memset(oSum->aulDigits, 0, MAX_DIGITS * sizeof(unsigned long));
     endif2:
 
@@ -58,7 +58,7 @@ int BigInt_add(BigInt_T oAddend1, BigInt_T oAddend2, BigInt_T oSum)
     ulCarry = 0;
     lIndex = 0;
     addLoop:
-        if (lIndex >= lSumLength) goto endaddLoop:
+        if (lIndex >= lSumLength) goto endaddLoop;
         ulSum = ulCarry;
         ulCarry = 0;
 
