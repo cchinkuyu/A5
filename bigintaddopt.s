@@ -57,10 +57,10 @@ BigInt_larger:
 
     // return lLarger;
     mov     x0, LLARGER    
-    str     x30, [sp]
-    str     LENGTH2, [sp, 8]
-    str     LENGTH1, [sp, 16]
-    str     LLARGER, [sp, 24]
+    ldr     x30, [sp]
+    ldr     LENGTH2, [sp, 8]
+    ldr     LENGTH1, [sp, 16]
+    ldr     LLARGER, [sp, 24]
     add     sp, sp, BI_LARGER_STACK_BYTECOUNT
     ret
 
@@ -220,14 +220,14 @@ BigInt_add:
         bne     endif6
 
         // return FALSE;
-        str     x30, [sp]
-        str     OSUM, [sp, 8]
-        str     OADDEND2, [sp, 16]
-        str     OADDEND1, [sp, 24]
-        str     LSUMLENGTH, [sp, 32]
-        str     LINDEX, [sp, 40]
-        str     ULSUM, [sp, 48]
-        str     ULCARRY, [sp, 56]
+        ldr     x30, [sp]
+        ldr     OSUM, [sp, 8]
+        ldr     OADDEND2, [sp, 16]
+        ldr     OADDEND1, [sp, 24]
+        ldr     LSUMLENGTH, [sp, 32]
+        ldr     LINDEX, [sp, 40]
+        ldr     ULSUM, [sp, 48]
+        ldr     ULCARRY, [sp, 56]
         mov     w0, FALSE
         add     sp, sp, BI_ADD_STACK_BYTECOUNT
         ret     
@@ -249,15 +249,15 @@ BigInt_add:
         mov     OSUM, LSUMLENGTH
         
         // return TRUE;
-        str     x30, [sp]
-        str     OSUM, [sp, 8]
-        str     OADDEND2, [sp, 16]
-        str     OADDEND1, [sp, 24]
-        str     LSUMLENGTH, [sp, 32]
-        str     LINDEX, [sp, 40]
-        str     ULSUM, [sp, 48]
-        str     ULCARRY, [sp, 56]
-        mov     w0, TRUE
+        ldr     x30, [sp]
+        ldr     OSUM, [sp, 8]
+        ldr     OADDEND2, [sp, 16]
+        ldr     OADDEND1, [sp, 24]
+        ldr     LSUMLENGTH, [sp, 32]
+        ldr     LINDEX, [sp, 40]
+        ldr     ULSUM, [sp, 48]
+        ldr     ULCARRY, [sp, 56]
+        ldr     w0, TRUE
         add     sp, sp, BI_ADD_STACK_BYTECOUNT
         ret
 
