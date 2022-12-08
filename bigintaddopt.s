@@ -56,7 +56,7 @@ BigInt_larger:
     endif:
 
     // return lLarger;
-    ldr     x0, [sp, LLARGER]    
+    mov     x0, LLARGER    
     str     x30, [sp]
     str     x19, [sp, 8]
     str     x20, [sp, 16]
@@ -129,10 +129,7 @@ BigInt_add:
 
     /* Clear oSum's array if necessary. */
     // if (oSum->lLength <= lSumLength) goto endif2;
-        mov     x0, OSUM
-        ldr     x0, [x0]
-        mov     x1, LSUMLENGTH
-        cmp     x0, x1
+        cmp     OSUM, LSUMLENGTH
         ble     endif2
 
     // memset(oSum->aulDigits, 0, MAX_DIGITS * sizeof(unsigned long));
@@ -151,7 +148,7 @@ BigInt_add:
         mov     ULCARRY, x0
 
         // lIndex = 0;
-        mov     x0, 0
+        // NOTE: x0 still contains 0
         mov     LINDEX, x0
 
     addLoop:
@@ -163,7 +160,7 @@ BigInt_add:
         mov     ULSUM, ULCARRY
 
         // ulCarry = 0;
-        mov     x0, 0
+        // NOTE: x0 still contains 0
         mov     ULCARRY, x0
 
 
