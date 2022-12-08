@@ -29,8 +29,8 @@ BigInt_larger:
     // Prolog
     sub     sp, sp, BI_LARGER_STACK_BYTECOUNT
     str     x30, [sp]
-    str     LENGTH2, [sp, 8]
-    str     LENGTH1, [sp, 16]
+    str     LLENGTH2, [sp, 8]
+    str     LLENGTH1, [sp, 16]
     str     LLARGER, [sp, 24]
 
     // Store parameters in registers
@@ -58,9 +58,9 @@ BigInt_larger:
     // return lLarger;
     mov     x0, LLARGER    
     ldr     x30, [sp]
-    ldr     LENGTH2, [sp, 8]
-    ldr     LENGTH1, [sp, 16]
-    ldr     LLARGER, [sp, 24]
+    ldr     LLENGTH2, [sp, 8]
+    ldr     LLENGTH1, [sp, 16]
+    ldr     LLLARGER, [sp, 24]
     add     sp, sp, BI_LARGER_STACK_BYTECOUNT
     ret
 
@@ -257,7 +257,7 @@ BigInt_add:
         ldr     LINDEX, [sp, 40]
         ldr     ULSUM, [sp, 48]
         ldr     ULCARRY, [sp, 56]
-        ldr     w0, TRUE
+        mov     w0, TRUE
         add     sp, sp, BI_ADD_STACK_BYTECOUNT
         ret
 
