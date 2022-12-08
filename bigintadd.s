@@ -65,6 +65,8 @@ BigInt_larger:
 distinct from oAddend1 and oAddend2.  Return 0 (FALSE) if an
 overflow occurred, and 1 (TRUE) otherwise. */
 
+        .global BigInt_add
+        
 // int BigInt_add(BigInt_T oAddend1, BigInt_T oAddend2, BigInt_T oSum)
 BigInt_add:
 
