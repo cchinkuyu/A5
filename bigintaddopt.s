@@ -116,19 +116,19 @@ BigInt_add:
 
     /* NEED TO DO TWO LDRs one for pointer and another to get its value*/
     // lSumLength = BigInt_larger(oAddend1->lLength, oAddend2->lLength);
-        ldr     x0, [OADDEND1]
-        ldr     x1, [OADDEND2]
+        mov     x0, OADDEND1
+        mov     x1, OADDEND2
         bl      BigInt_larger
         mov     LSUMLENGTH, x0
 
     /* Clear oSum's array if necessary. */
     // if (oSum->lLength <= lSumLength) goto endif2;
-        ldr     x0, [OSUM]
+        mov     x0, OSUM
         cmp     x0, LSUMLENGTH
         ble     endif2
 
     // memset(oSum->aulDigits, 0, MAX_DIGITS * sizeof(unsigned long));
-        ldr     x0, [OSUM]
+        mov     x0, OSUM
         add     x0, x0, ARRAY_OFFSET
         mov     w1, 0
         mov     x2, MAX_DIGITS
@@ -162,7 +162,7 @@ BigInt_add:
         // ulSum += oAddend1->aulDigits[lIndex];
         mov     x0, OADDEND1
         add     x0, x0, ARRAY_OFFSET
-        ldr     x1, [x0, LINDEX, lsl 3]
+        mov     x1, [x0, LINDEX, lsl 3]
         add     ULSUM, ULSUM, x1
 
         /* Check for overflow. */
@@ -180,7 +180,7 @@ BigInt_add:
         // ulSum += oAddend2->aulDigits[lIndex];
         mov     x0, OADDEND2
         add     x0, x0, ARRAY_OFFSET
-        ldr     x1, [x0, LINDEX, lsl 3]
+        mov     x1, [x0, LINDEX, lsl 3]
         add     ULSUM, ULSUM, x1
 
         /* Check for overflow. */
@@ -236,7 +236,7 @@ BigInt_add:
         mov     x0, OSUM
         add     x0, x0, ARRAY_OFFSET
         mov     w1, 1        
-        str     x1, [x0 , LSUMLENGTH, lsl 3]
+        mov     x1, [x0 , LSUMLENGTH, lsl 3]
 
         // lSumLength++;
         add     LSUMLENGTH, LSUMLENGTH, 1
