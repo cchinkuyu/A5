@@ -144,7 +144,7 @@ BigInt_add:
 
     /* Perform the addition. */
         // ulCarry = 0;
-        mov     x0, 0
+        mov     w0, 0
         mov     ULCARRY, x0
 
         // lIndex = 0;
@@ -176,7 +176,7 @@ BigInt_add:
         bhs     endif3
 
         // ulCarry = 1;
-        mov     x0, 1
+        mov     w0, 1
         mov     ULCARRY, x0
 
     endif3:
@@ -193,7 +193,7 @@ BigInt_add:
         bhs     endif4
 
         // ulCarry = 1;
-        mov     x0, 1
+        mov     w0, 1
         mov     ULCARRY, x0
 
     endif4:
@@ -236,7 +236,7 @@ BigInt_add:
 
         // oSum->aulDigits[lSumLength] = 1;
         add     x0, OSUM, ARRAY_OFFSET
-        mov     x1, 1        
+        mov     w1, 1        
         str     x1, [x0 , LSUMLENGTH, lsl 3]
 
         // lSumLength++;
