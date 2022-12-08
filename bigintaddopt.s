@@ -29,9 +29,9 @@ BigInt_larger:
     // Prolog
     sub     sp, sp, BI_LARGER_STACK_BYTECOUNT
     str     x30, [sp]
-    str     x19, [sp, 8]
-    str     x20, [sp, 16]
-    str     x21, [sp, 24]
+    str     LENGTH2, [sp, 8]
+    str     LENGTH1, [sp, 16]
+    str     LLARGER, [sp, 24]
 
     // Store parameters in registers
     mov     LLENGTH1, x0
@@ -58,9 +58,9 @@ BigInt_larger:
     // return lLarger;
     mov     x0, LLARGER    
     str     x30, [sp]
-    str     x19, [sp, 8]
-    str     x20, [sp, 16]
-    str     x21, [sp, 24]
+    str     LENGTH2, [sp, 8]
+    str     LENGTH1, [sp, 16]
+    str     LLARGER, [sp, 24]
     add     sp, sp, BI_LARGER_STACK_BYTECOUNT
     ret
 
@@ -108,13 +108,13 @@ BigInt_add:
         // Prolog
         sub     sp, sp, BI_ADD_STACK_BYTECOUNT
         str     x30, [sp]
-        str     x19, [sp, 8]
-        str     x20, [sp, 16]
-        str     x21, [sp, 24]
-        str     x22, [sp, 32]
-        str     x23, [sp, 40]
-        str     x24, [sp, 48]
-        str     x25, [sp, 56]
+        str     OSUM, [sp, 8]
+        str     OADDEND2, [sp, 16]
+        str     OADDEND1, [sp, 24]
+        str     LSUMLENGTH, [sp, 32]
+        str     LINDEX, [sp, 40]
+        str     ULSUM, [sp, 48]
+        str     ULCARRY, [sp, 56]
 
     /* Determine the larger length. */
 
@@ -221,13 +221,13 @@ BigInt_add:
 
         // return FALSE;
         str     x30, [sp]
-        str     x19, [sp, 8]
-        str     x20, [sp, 16]
-        str     x21, [sp, 24]
-        str     x22, [sp, 32]
-        str     x23, [sp, 40]
-        str     x24, [sp, 48]
-        str     x25, [sp, 56]
+        str     OSUM, [sp, 8]
+        str     OADDEND2, [sp, 16]
+        str     OADDEND1, [sp, 24]
+        str     LSUMLENGTH, [sp, 32]
+        str     LINDEX, [sp, 40]
+        str     ULSUM, [sp, 48]
+        str     ULCARRY, [sp, 56]
         mov     w0, FALSE
         add     sp, sp, BI_ADD_STACK_BYTECOUNT
         ret     
@@ -250,13 +250,13 @@ BigInt_add:
         
         // return TRUE;
         str     x30, [sp]
-        str     x19, [sp, 8]
-        str     x20, [sp, 16]
-        str     x21, [sp, 24]
-        str     x22, [sp, 32]
-        str     x23, [sp, 40]
-        str     x24, [sp, 48]
-        str     x25, [sp, 56]
+        str     OSUM, [sp, 8]
+        str     OADDEND2, [sp, 16]
+        str     OADDEND1, [sp, 24]
+        str     LSUMLENGTH, [sp, 32]
+        str     LINDEX, [sp, 40]
+        str     ULSUM, [sp, 48]
+        str     ULCARRY, [sp, 56]
         mov     w0, TRUE
         add     sp, sp, BI_ADD_STACK_BYTECOUNT
         ret
