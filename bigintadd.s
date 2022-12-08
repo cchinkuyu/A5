@@ -22,6 +22,8 @@
         .equ LLENGTH1, 16
         .equ LLENGTH2, 24
 
+        .global main
+
 BigInt_larger:
 
     // Prolog
@@ -258,4 +260,7 @@ BigInt_add:
         ldr     x30, [sp]
         add     sp, sp, BI_ADD_STACK_BYTECOUNT
         ret
+
+
+        .size main, (. - main)
 
