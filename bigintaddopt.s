@@ -33,10 +33,6 @@ BigInt_larger:
     str     LLENGTH1, [sp, 16]
     str     LLARGER, [sp, 24]
 
-    // Store parameters in registers
-    mov     LLENGTH1, x0
-    mov     LLENGTH2, x1
-
     // long lLarger;
 
     // if (lLength1 <= lLength2) goto else1;
