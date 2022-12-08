@@ -160,7 +160,7 @@ BigInt_add:
 
 
         // ulSum += oAddend1->aulDigits[lIndex];
-        mov     x0, [OADDEND1]
+        mov     x0, OADDEND1
         add     x0, x0, ARRAY_OFFSET
         ldr     x1, [x0, LINDEX, lsl 3]
         add     ULSUM, ULSUM, x1
@@ -178,7 +178,7 @@ BigInt_add:
     endif3:
 
         // ulSum += oAddend2->aulDigits[lIndex];
-        mov     x0, [OADDEND2]
+        mov     x0, OADDEND2
         add     x0, x0, ARRAY_OFFSET
         ldr     x1, [x0, LINDEX, lsl 3]
         add     ULSUM, ULSUM, x1
@@ -196,7 +196,7 @@ BigInt_add:
     endif4:
 
         // oSum->aulDigits[lIndex] = ulSum;
-        mov     x0, [OSUM]
+        mov     x0, OSUM
         add     x0, OSUM, ARRAY_OFFSET
         str     ULSUM, [x0, LINDEX, lsl 3]
 
@@ -233,7 +233,7 @@ BigInt_add:
     endif6:
 
         // oSum->aulDigits[lSumLength] = 1;
-        mov     x0, [OSUM]
+        mov     x0, OSUM
         add     x0, x0, ARRAY_OFFSET
         mov     w1, 1        
         str     x1, [x0 , LSUMLENGTH, lsl 3]
