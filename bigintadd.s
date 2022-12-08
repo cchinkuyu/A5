@@ -22,8 +22,6 @@
         .equ LLENGTH1, 16
         .equ LLENGTH2, 24
 
-        .global main
-
 BigInt_larger:
 
     // Prolog
@@ -262,5 +260,5 @@ BigInt_add:
         ret
 
 
-        .size main, (. - main)
+        .size BigInt_add, (. - BigInt_add)
 
