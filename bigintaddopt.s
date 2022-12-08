@@ -60,7 +60,7 @@ BigInt_larger:
     ldr     x30, [sp]
     ldr     LLENGTH2, [sp, 8]
     ldr     LLENGTH1, [sp, 16]
-    ldr     LLLARGER, [sp, 24]
+    ldr     LLARGER, [sp, 24]
     add     sp, sp, BI_LARGER_STACK_BYTECOUNT
     ret
 
