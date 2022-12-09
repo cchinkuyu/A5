@@ -94,7 +94,7 @@ n/a
 will help your grader to grade it in the most favorable light? In
 particular, what bugs are in your submission?
 
-
+my bigintaddopt.s has a produces segfault at line 207
 
 ------------------------------------------------------------------------
 What is your mywc program test plan?

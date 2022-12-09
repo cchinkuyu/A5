@@ -124,6 +124,8 @@ BigInt_add:
     /* Determine the larger length. */
 
     // lSumLength = BigInt_larger(oAddend1->lLength, oAddend2->lLength);
+        mov     x0, OADDEND1
+        mov     x1, OADDEND2
         bl      BigInt_larger
         mov     LSUMLENGTH, x0
 
