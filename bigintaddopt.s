@@ -33,6 +33,10 @@ BigInt_larger:
     str     LLENGTH1, [sp, 16]
     str     LLARGER, [sp, 24]
 
+    // Store parameters in registers
+    mov     LLENGTH2, x0
+    mov     LLENGTH1, x1
+
     // long lLarger;
 
     // if (lLength1 <= lLength2) goto else1;
@@ -111,6 +115,11 @@ BigInt_add:
         str     LINDEX, [sp, 40]
         str     ULSUM, [sp, 48]
         str     ULCARRY, [sp, 56]
+
+        // Store parameters in registers
+        mov     OSUM, x0
+        mov     OADDEND2, x1
+        mov     OADDEND1, x2
 
     /* Determine the larger length. */
 
