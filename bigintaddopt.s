@@ -86,9 +86,9 @@ BigInt_add:
         LSUMLENGTH .req x22
 
         // Parameter registers
-        OADDEND1 .req x21
+        OSUM .req x21
         OADDEND2 .req x20
-        OSUM .req x19
+        OADDEND1  .req x19
 
         // Struct offset
         .equ ARRAY_OFFSET, 8
@@ -108,25 +108,22 @@ BigInt_add:
         // Prolog
         sub     sp, sp, BI_ADD_STACK_BYTECOUNT
         str     x30, [sp]
-        str     OSUM, [sp, 8]
+        str     OADDEND1, [sp, 8]
         str     OADDEND2, [sp, 16]
-        str     OADDEND1, [sp, 24]
+        str     OSUM, [sp, 24]
         str     LSUMLENGTH, [sp, 32]
         str     LINDEX, [sp, 40]
         str     ULSUM, [sp, 48]
         str     ULCARRY, [sp, 56]
 
         // Store parameters in registers
-        mov     OSUM, x0
+        mov     OADDEND1, x0
         mov     OADDEND2, x1
-        mov     OADDEND1, x2
+        mov     OSUM, x2
 
     /* Determine the larger length. */
 
-    /* NEED TO DO TWO LDRs one for pointer and another to get its value*/
     // lSumLength = BigInt_larger(oAddend1->lLength, oAddend2->lLength);
-        mov     x0, OADDEND1
-        mov     x1, OADDEND2
         bl      BigInt_larger
         mov     LSUMLENGTH, x0
 
