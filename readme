@@ -17,7 +17,28 @@ information given in the "Policies" web page (also available on armlab
 in the file ~cos217/AuthorizedSourcesList ) to this section of the
 readme file, and edit it as appropriate.
 
+The course's lectures.
 
+The course's precepts.
+
+The course's website.
+
+Documents that are referenced directly by the course's website. Such 
+documents include the course's lecture slides and precept handouts.
+
+The course's textbooks.
+
+The man pages on the armlab cluster.
+
+The course's current staff members outside of class time through office 
+hours.
+
+The course's current staff members outside of class time through 
+meetings.
+
+The course's current staff members outside of class time through Ed.
+
+The course's current staff members outside of class time through e-mail.
 
 ------------------------------------------------------------------------
 Student 2: What authorized sources of information did you use to
@@ -60,7 +81,7 @@ n/a
 Student 1: What is your assessment of the assignment? Was it helpful?
 Was it fun?
 
-
+Fun and moderately tedious. I learned a lot.
 
 ------------------------------------------------------------------------
 Student 2: What is your assessment of the assignment? Was it helpful?
@@ -78,8 +99,13 @@ particular, what bugs are in your submission?
 ------------------------------------------------------------------------
 What is your mywc program test plan?
 
-
-
+mywcstatement-contains a statement with atleast one word, char, and
+newline
+mywcchar-just one char
+mywcstressed- 50000 random characters
+mywcnewline- just a newline
+mywcempty1- an empty file
+mywcspace- just a space 
 ------------------------------------------------------------------------
 What are the CPU times consumed by the programs from Parts 2a, 2b, 2d,
 2e, and 2f to compute fib(250000) on armlab? Fill in the blanks.
